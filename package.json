@@ -1,6 +1,6 @@
 {
 	"name": "n8n-nodes-suprsend",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "n8n node for SuprSend: trigger notification workflows and manage users, preferences and lists",
 	"license": "MIT",
 	"homepage": "https://www.suprsend.com",
@@ -15,7 +15,10 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/ADHESHsuryatej/n8n-nodes-suprsend.git"
+		"url": "git+https://github.com/ADHESHsuryatej/n8n-nodes-suprsend.git"
+	},
+	"publishConfig": {
+		"access": "public"
 	},
 	"scripts": {
 		"build": "n8n-node build",
@@ -27,7 +30,8 @@
 		"prepublishOnly": "n8n-node prerelease"
 	},
 	"files": [
-		"dist"
+		"dist",
+		"!dist/tsconfig.tsbuildinfo"
 	],
 	"n8n": {
 		"n8nNodesApiVersion": 1,
