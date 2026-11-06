@@ -212,13 +212,22 @@ const userFields: INodeProperties[] = [
 		routing: { send: { type: 'body', property: 'preference' } },
 	},
 	{
-		displayName: 'Tenant ID',
-		name: 'tenantId',
-		type: 'string',
-		default: '',
-		description: 'Set the preference for this tenant only',
+		displayName: 'Additional Fields',
+		name: 'additionalFields',
+		type: 'collection',
+		placeholder: 'Add Field',
+		default: {},
 		displayOptions: { show: { resource: ['user'], operation: ['updatePreference'] } },
-		routing: { send: { type: 'query', property: 'tenant_id' } },
+		options: [
+			{
+				displayName: 'Tenant ID',
+				name: 'tenantId',
+				type: 'string',
+				default: '',
+				description: 'Set the preference for this tenant only',
+				routing: { send: { type: 'query', property: 'tenant_id' } },
+			},
+		],
 	},
 ];
 

@@ -1,6 +1,6 @@
 {
 	"name": "n8n-nodes-suprsend",
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"description": "n8n node for SuprSend: trigger notification workflows and manage users, preferences and lists",
 	"license": "MIT",
 	"homepage": "https://www.suprsend.com",
