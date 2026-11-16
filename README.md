@@ -13,9 +13,21 @@ Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes
 | Resource | Operation | What it does |
 |---|---|---|
 | Workflow | Trigger | Triggers a SuprSend workflow for a user, with optional emails, phone numbers, tenant and template data |
+| Workflow | Trigger for List | Triggers a workflow for every user in a list |
+| Workflow | Cancel | Stops a running workflow for a user (for example reminders that are no longer needed) |
+| Event | Send | Sends an event; every workflow set up for that event runs |
+| Broadcast | Send | Sends one announcement to every user in a list (needs the Workspace Key in the credential) |
 | User | Create or Update | Creates a user, or updates them if the Distinct ID already exists |
+| User | Get Preferences | Shows which categories and channels a user has opted into |
 | User | Update Category Preference | Opts a user in or out of a notification category |
+| User | Update Channel Preference | Turns a channel (for example SMS) on or off for a user |
 | List | Add User | Adds a user to a SuprSend list |
+| List | Remove User | Removes a user from a list |
+| List | Create | Creates a new list |
+| List | Get Many | Gets the lists in your workspace |
+| List | Get Users | Gets the users in a list |
+| List | Sync | Makes a list contain exactly the given users, removing everyone else |
+| Message | Get Many | Gets the log of sent messages, with filters for channel, workflow and date |
 
 The node can also be used as a tool by n8n AI agents.
 
@@ -27,6 +39,10 @@ The node can also be used as a tool by n8n AI agents.
 4. In n8n, create a **SuprSend API** credential and paste the key.
 
 Each API key belongs to one workspace, so create one credential per workspace.
+
+To send broadcasts, also paste the **Workspace Key** from the same page into the credential.
+
+Optional: to pick workflows, events and categories from a dropdown, create a **Service Token** (Account Settings > Service Tokens) and add it to the credential next to your **Workspace Key**. The node finds the right workspace from the Workspace Key. Lists and templates load in dropdowns without it.
 
 ## Usage
 
